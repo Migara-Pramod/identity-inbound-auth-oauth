@@ -323,7 +323,7 @@ public class OAuth2TokenEndpoint {
             tokenReqDTO.setAuthorizationCode(oauthRequest.getCode());
             tokenReqDTO.setPkceCodeVerifier(oauthRequest.getPkceCodeVerifier());
         } else if (GrantType.PASSWORD.toString().equals(grantType)) {
-            tokenReqDTO.setResourceOwnerUsername(oauthRequest.getUsername());
+            tokenReqDTO.setResourceOwnerUsername(oauthRequest.getUsername().trim());
             tokenReqDTO.setResourceOwnerPassword(oauthRequest.getPassword());
         } else if (GrantType.REFRESH_TOKEN.toString().equals(grantType)) {
             tokenReqDTO.setRefreshToken(oauthRequest.getRefreshToken());
